@@ -4,13 +4,23 @@ import Controller from "./controller.js"
 import Service from "./service.js"
 import View from "./view.js"
 
+async function getWorker(){
+  if(supportsWorkerType()){
+    console.log('suporta')
+    const worker = new Worker('./src/worker.js', {type: 'module'})
+    return;
+  } 
+  const workerMock = {
+    async postMessage() {},
+    onmessage(msg) {}
+  }
 
-if(supportsWorkerType()){
-  console.log('suporta')
-} 
-else{
+
   console.log('nao suporta')
+
 }
+
+const worker = await getWorker()
 
 const camera = await Camera.init()
 const [rootPath] = window.location.href.split('/pages/')
