@@ -13,7 +13,8 @@ const factory = {
       view: new CardsView(),
       service: new CardsService({ 
         dbUrl: `${rootPath}/assets/database.json`,
-        cardListWorker })
+        cardListWorker 
+      })
     })
   }
 }

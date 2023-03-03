@@ -1,4 +1,4 @@
-import factory from "../../pages/video-player/src/factory"
+import factory from "../../pages/video-player/src/factory.js"
 
 function supportsWorkerType(){
     let supports = false
